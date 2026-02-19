@@ -10,6 +10,16 @@ I'm a developers who loves to learn and self-develop. Every day, I spent a lot o
 
 Therefore, I create this website so that I can see my list of bookmarks and copy the link. Plus, I can add more useful resources. At the same time, my fellows can also do that own their own. And we can switch from one person's page to another one.
 
+### Set up
+To install `jest`:
+```
+npm install jest
+```
+To install `http-server`:
+```
+npm install http-server
+```
+
 ### Rubric
 The website must contain a drop-down which lists five users
 Selecting a user must display the list of bookmarks for the relevant user
