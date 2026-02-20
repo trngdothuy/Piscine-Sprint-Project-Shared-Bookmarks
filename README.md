@@ -10,6 +10,12 @@ I'm a developers who loves to learn and self-develop. Every day, I spent a lot o
 
 Therefore, I create this website so that I can see my list of bookmarks and copy the link. Plus, I can add more useful resources. At the same time, my fellows can also do that own their own. And we can switch from one person's page to another one.
 
+### User Story (June)
+We are working professionals who want to save a URL that shows the Title and a short description so that we can remember what the page is about without revisiting it, and also share it with our fellow professionals.
+
+So, we are creating this website to work together with other working professionals, so each of us can add, share, and like these useful links when they find them useful.
+
+
 ## Set up
 To install `jest`:
 ```
