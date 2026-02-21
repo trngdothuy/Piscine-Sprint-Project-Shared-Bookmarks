@@ -35,3 +35,17 @@ npm install http-server
 - [ ] After creating a new bookmark, the list of bookmarks for the current user is shown, including the new bookmark
 - [ ] The website must score 100 for accessibility in Lighthouse
 - [ ] Unit tests must be written for at least one non-trivial function
+
+
+## Breakdown problem:
+### Level 100
+- [ ] Display bookmarks
+    - [ ] For 1 user
+    - [ ] For multi users
+    - [ ] Organize in reverse chronological order
+### Level 200
+- [ ] Add copy and like buttons
+    - [ ] Add copy button
+    - [ ] Add like button
+### Level 300
+- [ ] Allow user to add new bookmark
