@@ -1,7 +1,8 @@
 # Piscine Sprint Project: Shared Bookmarks
 #### By Trang Do (@trngdothuy) and June Monton (@juneMonton)
 
-## Link to the deployed website:
+## Link to the deployed website
+https://piscine-shared-bookmarks-6.netlify.app/
 
 ## Introduction
 ### User Story
