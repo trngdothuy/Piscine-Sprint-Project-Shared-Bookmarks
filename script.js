@@ -19,22 +19,11 @@ function makeDisplayUserSelector() {
   }
 };
 
-makeDisplayUserSelector()
-displayBookmarks(state.userId)
-
-selectedUser.addEventListener("change", (e) => {
-  state.userId = e.target.value;
-  bookmarkDisplayDiv.innerHTML = ""
-  displayBookmarks(state.userId)
-  console.log(state)
-})
-
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
   const bookmarkShown = state.bookmarksData.map(makeBookmarkCard)
   bookmarkDisplayDiv.append(...bookmarkShown)
 }
-
 
 function makeBookmarkCard({name, url, description, timestamp}) {
   const bookmarkCardDiv = document.createElement("div");
@@ -53,5 +42,21 @@ function makeBookmarkCard({name, url, description, timestamp}) {
   bookmarkCardDiv.append(bookmarkName, bookmarkDescription, bookmarkTimestamp)
   return bookmarkCardDiv;
 }
+
+makeDisplayUserSelector()
+displayBookmarks(state.userId)
+
+// listen to the change in the user selector, then change the state and re-render
+selectedUser.addEventListener("change", (e) => {
+  state.userId = e.target.value;
+  bookmarkDisplayDiv.innerHTML = ""
+  displayBookmarks(state.userId)
+  console.log(state)
+})
+
+
+
+
+
 
 
