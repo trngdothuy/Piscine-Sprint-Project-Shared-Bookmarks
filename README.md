@@ -6,14 +6,9 @@
 ## Introduction
 ### User Story
 
-I'm a developers who loves to learn and self-develop. Every day, I spent a lot of time reading online, and I found tons of useful links that I would love to save them to come back later. And I also want to share my beautiful and useful bookmarks collection with my fellows. 
+As developers, we spend a lot of time reading articles and technical resources online. We want a simple way to save useful links along with a title and short description so that we can easily remember what each resource is about without reopening it.
 
-Therefore, I create this website so that I can see my list of bookmarks and copy the link. Plus, I can add more useful resources. At the same time, my fellows can also do that own their own. And we can switch from one person's page to another one.
-
-### User Story (June)
-We are working professionals who want to save a URL that shows the Title and a short description so that we can remember what the page is about without revisiting it, and also share it with our fellow professionals.
-
-So, we are creating this website to work together with other working professionals, so each of us can add, share, and like these useful links when they find them useful.
+We also want to share these bookmarks with other developers, view each other’s saved resources, and interact with them by liking useful links. The system should allow us to select different users, view their bookmarks in reverse chronological order, copy links to the clipboard, and add new bookmarks easily through an accessible form.
 
 
 ## Set up
