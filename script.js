@@ -1,6 +1,10 @@
-import { getUserIds } from "./storage.js";
+import { getUserIds, getData } from "./storage.js";
 
 const selectedUser = document.getElementById("users-selector")
+
+let state = {
+  userId: "1",
+}
 
 // make selector to choose user to display bookmarks
 function makeDisplayUserSelector() {
@@ -14,3 +18,12 @@ function makeDisplayUserSelector() {
 };
 
 makeDisplayUserSelector()
+
+selectedUser.addEventListener("change", (e) => {
+  e.preventDefault
+  state.userId = e.target.value
+})
+
+console.log(getData("1"))
+
+
