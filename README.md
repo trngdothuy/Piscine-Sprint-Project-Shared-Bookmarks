@@ -37,7 +37,7 @@ npm install http-server
 - [ ] Unit tests must be written for at least one non-trivial function
 
 
-## Breakdown problem:
+## Breakdown problem
 ### Level 100
 - [ ] Display bookmarks
     - [ ] For 1 user
