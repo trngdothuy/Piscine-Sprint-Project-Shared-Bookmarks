@@ -6,6 +6,9 @@ test("User count is correct", () => {
 
 test("Get data successfully from storage.js", () => {
   expect(typeof(getData(1))).toEqual("object");
+  expect(typeof(getData(2))).toEqual("object");
+  expect(typeof(getData(3))).toEqual("object");
+  expect(typeof(getData(4))).toEqual("object");
 })
 
 
