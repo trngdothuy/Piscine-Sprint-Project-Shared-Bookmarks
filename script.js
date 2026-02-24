@@ -21,6 +21,7 @@ function makeDisplayUserSelector() {
 
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
+  const sorted =state.bookmarksData.sort ((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
   const bookmarkShown = state.bookmarksData.map(makeBookmarkCard)
   bookmarkDisplayDiv.append(...bookmarkShown)
 }
@@ -38,6 +39,7 @@ function makeBookmarkCard({name, url, description, timestamp}) {
 
   const bookmarkTimestamp = document.createElement("p")
   bookmarkTimestamp.innerHTML = new Date(timestamp).toLocaleDateString() 
+  bookmarkTimestamp.classList.add("bookmark-date")
 
   bookmarkCardDiv.append(bookmarkName, bookmarkDescription, bookmarkTimestamp)
   return bookmarkCardDiv;
