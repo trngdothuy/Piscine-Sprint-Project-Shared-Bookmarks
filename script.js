@@ -11,7 +11,7 @@ let state = {
 // make selector to choose user to display bookmarks
 function makeDisplayUserSelector() {
   const users = getUserIds();
-  for (let i = 1; i < users.length; i++) {
+  for (let i = 1; i <= users.length; i++) {
     const option = document.createElement("option");
     option.textContent = `User ${i}`;
     option.value = i
@@ -21,9 +21,18 @@ function makeDisplayUserSelector() {
 
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
-  const sorted =state.bookmarksData.sort ((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-  const bookmarkShown = sorted.map(makeBookmarkCard)
-  bookmarkDisplayDiv.append(...bookmarkShown)
+  if (state.bookmarksData.length == 0) {
+    const bookmarkShown = document.createElement("div")
+    bookmarkShown.className = "bookmark-card-div" 
+    bookmarkShown.style["background-color"] = "#F88379"
+    bookmarkShown.innerHTML = "No data. This user didn't save any bookmark"
+    bookmarkDisplayDiv.append(bookmarkShown)
+  } else {
+    const sorted =state.bookmarksData.sort ((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+    const bookmarkShown = sorted.map(makeBookmarkCard)
+    bookmarkDisplayDiv.append(...bookmarkShown)
+  }
+  
 }
 
 function makeBookmarkCard({name, url, description, timestamp}) {

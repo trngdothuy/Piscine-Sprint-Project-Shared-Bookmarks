@@ -35,6 +35,10 @@ h1 {
   margin: 20px 0;
 }
 
+#users-selector {
+  margin-left: 5px;
+}
+
 select {
   font-size: 1.15rem;
   padding: 2px 25px;
