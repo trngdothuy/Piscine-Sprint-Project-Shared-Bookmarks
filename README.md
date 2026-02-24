@@ -1,4 +1,4 @@
-# Piscine Sprint Project: Shared Bookmarks
+# Piscine Sprint Project: ShareMarks
 #### By Trang Do (@trngdothuy) and June Monton (@juneMonton)
 
 ## Link to the deployed website
@@ -25,8 +25,8 @@ npm install http-server
 ## Rubric
 - [x] The website must contain a drop-down which lists five users
 - [x] Selecting a user must display the list of bookmarks for the relevant user
-- [ ] If there are no bookmarks for the selected user, a message is displayed to explain this
-- [ ] The list of bookmarks must be shown in reverse chronological order
+- [x] If there are no bookmarks for the selected user, a message is displayed to explain this
+- [x] The list of bookmarks must be shown in reverse chronological order
 - [x] Each bookmark has a title, description and created at timestamp displayed
 - [x] Each bookmark’s title is a link to the bookmark’s URL
 - [ ] Each bookmark's "Copy to clipboard" button must copy the URL of the bookmark
@@ -40,10 +40,10 @@ npm install http-server
 
 ## Breakdown problem
 ### Level 100
-- [ ] Display bookmarks
+- [x] Display bookmarks
     - [x] For 1 user
     - [x] For multi users
-    - [ ] Organize in reverse chronological order
+    - [x] Organize in reverse chronological order
 ### Level 200
 - [ ] Add copy and like buttons
     - [ ] Add copy button
