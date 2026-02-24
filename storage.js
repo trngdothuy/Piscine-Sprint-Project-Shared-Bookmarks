@@ -10,7 +10,7 @@ const userDatabase = {
       name: "Figma",
       url: "https://figma.com",
       description: "Collaborative interface design tool.",
-      timestamp: "2026-02-13T12:15:00Z"
+      timestamp: "2026-01-13T12:15:00Z"
     },
     {
       name: "MDN Web Docs",
@@ -30,7 +30,7 @@ const userDatabase = {
       name: "Stack Overflow",
       url: "https://stackoverflow.com",
       description: "Community-driven Q&A for developers.",
-      timestamp: "2026-02-18T16:45:00Z"
+      timestamp: "2025-12-18T16:45:00Z"
     }
   ],
   "3": [
@@ -38,7 +38,7 @@ const userDatabase = {
       name: "YouTube",
       url: "https://youtube.com",
       description: "Video sharing and streaming platform.",
-      timestamp: "2026-02-17T10:20:00Z"
+      timestamp: "2026-01-17T10:20:00Z"
     },
     {
       name: "CSS Tricks",
@@ -52,7 +52,7 @@ const userDatabase = {
       name: "Dribbble",
       url: "https://dribbble.com",
       description: "Design inspiration and portfolio platform.",
-      timestamp: "2026-02-12T13:40:00Z"
+      timestamp: "2025-02-12T13:40:00Z"
     },
     {
       name: "AWS",
