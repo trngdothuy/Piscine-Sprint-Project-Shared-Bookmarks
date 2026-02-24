@@ -7,10 +7,10 @@
 const userDatabase = {
   "1": [
     {
-      name: "OpenAI",
-      url: "https://openai.com",
-      description: "Artificial intelligence research and deployment company.",
-      timestamp: "2026-02-21T09:00:00Z"
+      name: "Figma",
+      url: "https://figma.com",
+      description: "Collaborative interface design tool.",
+      timestamp: "2026-02-13T12:15:00Z"
     },
     {
       name: "MDN Web Docs",
@@ -49,9 +49,9 @@ const userDatabase = {
   ],
   "4": [
     {
-      name: "AWS-test",
-      url: "https://aws.amazon.com",
-      description: "Cloud computing services platform.",
+      name: "Dribbble",
+      url: "https://dribbble.com",
+      description: "Design inspiration and portfolio platform.",
       timestamp: "2026-02-12T13:40:00Z"
     },
     {
@@ -67,20 +67,7 @@ const userDatabase = {
       timestamp: "2026-02-14T17:05:00Z"
     }
   ],
-  "5": [
-    {
-      name: "Figma",
-      url: "https://figma.com",
-      description: "Collaborative interface design tool.",
-      timestamp: "2026-02-13T12:15:00Z"
-    },
-    {
-      name: "Dribbble",
-      url: "https://dribbble.com",
-      description: "Design inspiration and portfolio platform.",
-      timestamp: "2026-02-12T09:25:00Z"
-    }
-  ]
+  "5": []
 };
 
 /**

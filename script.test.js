@@ -16,5 +16,5 @@ test("user 4 bookmarks sorted newest to oldest (3 items)", () => {
   const sorted = getData("4").sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
   expect(sorted[0].name).toBe("AWS")       // 2026-02-15
   expect(sorted[1].name).toBe("Docker")    // 2026-02-14
-  expect(sorted[2].name).toBe("AWS-test")  // 2026-02-12
+  expect(sorted[2].name).toBe("Dribbble")  // 2026-02-12
 })
