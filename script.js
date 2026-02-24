@@ -22,7 +22,7 @@ function makeDisplayUserSelector() {
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
   const sorted =state.bookmarksData.sort ((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-  const bookmarkShown = state.bookmarksData.map(makeBookmarkCard)
+  const bookmarkShown = sorted.map(makeBookmarkCard)
   bookmarkDisplayDiv.append(...bookmarkShown)
 }
 
