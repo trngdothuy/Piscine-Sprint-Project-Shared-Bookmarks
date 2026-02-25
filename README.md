@@ -29,7 +29,7 @@ npm install http-server
 - [x] The list of bookmarks must be shown in reverse chronological order
 - [x] Each bookmark has a title, description and created at timestamp displayed
 - [x] Each bookmark’s title is a link to the bookmark’s URL
-- [ ] Each bookmark's "Copy to clipboard" button must copy the URL of the bookmark
+- [x] Each bookmark's "Copy to clipboard" button must copy the URL of the bookmark
 - [ ] Each bookmark's like counter works independently, and persists data across sessions
 - [ ] The website must contain a form with inputs for a URL, a title, and a description. The form should have a submit button.
 - [ ] Submitting the form adds a new bookmark for the relevant user only
@@ -46,7 +46,7 @@ npm install http-server
     - [x] Organize in reverse chronological order
 ### Level 200
 - [ ] Add copy and like buttons
-    - [ ] Add copy button
+    - [x] Add copy button
     - [ ] Add like button
 ### Level 300
 - [ ] Allow user to add new bookmark
