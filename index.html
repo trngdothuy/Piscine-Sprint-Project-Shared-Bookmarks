@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Shared Bookmarks</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <main>
-        <h1>Shared Bookmarks</h1>
+        <h1>ShareMarks</h1>
+        <!-- display new bookmarks -->
+        <div id="container">
+        <!-- drop down selector -->
+            <div id="display-user-selector">
+                <label>Show bookmarks of this user: </label>
+                <select name="user" id="users-selector">
+                </select>
+            </div>
+        <!-- bookmark card -->
+            <div id="bookmark-display-div"></div>
+        </div>
     </main>
     <script type="module" src="script.js"></script>
 </body>

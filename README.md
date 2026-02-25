@@ -1,7 +1,8 @@
-# Piscine Sprint Project: Shared Bookmarks
+# Piscine Sprint Project: ShareMarks
 #### By Trang Do (@trngdothuy) and June Monton (@juneMonton)
 
-## Link to the deployed website:
+## Link to the deployed website
+https://piscine-shared-bookmarks-6.netlify.app/
 
 ## Introduction
 ### User Story
@@ -22,12 +23,12 @@ npm install http-server
 ```
 
 ## Rubric
-- [ ] The website must contain a drop-down which lists five users
-- [ ] Selecting a user must display the list of bookmarks for the relevant user
-- [ ] If there are no bookmarks for the selected user, a message is displayed to explain this
-- [ ] The list of bookmarks must be shown in reverse chronological order
-- [ ] Each bookmark has a title, description and created at timestamp displayed
-- [ ] Each bookmark’s title is a link to the bookmark’s URL
+- [x] The website must contain a drop-down which lists five users
+- [x] Selecting a user must display the list of bookmarks for the relevant user
+- [x] If there are no bookmarks for the selected user, a message is displayed to explain this
+- [x] The list of bookmarks must be shown in reverse chronological order
+- [x] Each bookmark has a title, description and created at timestamp displayed
+- [x] Each bookmark’s title is a link to the bookmark’s URL
 - [ ] Each bookmark's "Copy to clipboard" button must copy the URL of the bookmark
 - [ ] Each bookmark's like counter works independently, and persists data across sessions
 - [ ] The website must contain a form with inputs for a URL, a title, and a description. The form should have a submit button.
@@ -37,12 +38,12 @@ npm install http-server
 - [ ] Unit tests must be written for at least one non-trivial function
 
 
-## Breakdown problem:
+## Breakdown problem
 ### Level 100
-- [ ] Display bookmarks
-    - [ ] For 1 user
-    - [ ] For multi users
-    - [ ] Organize in reverse chronological order
+- [x] Display bookmarks
+    - [x] For 1 user
+    - [x] For multi users
+    - [x] Organize in reverse chronological order
 ### Level 200
 - [ ] Add copy and like buttons
     - [ ] Add copy button

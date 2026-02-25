@@ -1,0 +1,81 @@
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+}
+/* Title */
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+  color: #0166FF; 
+  font-size: 3rem;
+}
+
+/* Display User Selector */
+
+#display-user-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  margin: 20px 0;
+}
+
+#users-selector {
+  margin-left: 5px;
+}
+
+select {
+  font-size: 1.15rem;
+  padding: 2px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Bookmark card*/
+.bookmark-card-div {
+  width: 40%;        /* 40% width leaves ~20% margin on each side */
+  margin: 20px auto;    /* Centers the card horizontally */
+  padding: 20px;
+  background-color: #caf0f8;
+  border-radius: 10px;
+
+} */
+
+
+/* Links */
+
+#bookmark-display-div a{
+  font-size: .95rem;
+}
+a {
+  color: #0077b6; /* Blue links, bookmark title */
+  font-size: 30px;
+}
+
+a:hover {
+  color: #e94560;
+}
+
+
+/* time stamp */
+.bookmark-date {
+  font-size: 0.875rem;
+  color: gray;
+}
