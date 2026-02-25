@@ -103,7 +103,3 @@ a:hover {
   border-color: #bbb;
 }
 
-.copy-button:focus {
-  outline: 2px solid #c7d2fe;
-  outline-offset: 2px;
-}
