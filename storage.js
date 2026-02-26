@@ -97,8 +97,6 @@ export function getData(userId) {
   // return userDatabase[userId] || null;
 }
 
-console.log("get", getData(1)[0].name)
-
 /**
  * Store data for a specific user.
  *

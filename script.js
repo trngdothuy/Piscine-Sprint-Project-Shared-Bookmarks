@@ -21,7 +21,6 @@ function makeDisplayUserSelector() {
 
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
-  console.log("here", Object.keys(state.bookmarksData).length)
   if (Object.keys(state.bookmarksData).length == 0) {
     const bookmarkShown = document.createElement("div")
     bookmarkShown.className = "bookmark-card-div" 
