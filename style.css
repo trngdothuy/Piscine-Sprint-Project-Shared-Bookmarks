@@ -77,7 +77,7 @@ a:hover {
 /* time stamp */
 .bookmark-date {
   font-size: 0.875rem;
-  color: gray;
+  color: rgb(52, 52, 52);
 }
 
 /* bookmark 1st line to display bookmark name and buttons */
