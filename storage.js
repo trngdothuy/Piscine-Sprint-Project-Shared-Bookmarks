@@ -1,9 +1,7 @@
 // This is a scaffolding file provided to manage stored data
 // Do not modify this file
 
-/**
- * Mock database of bookmarks for 5 users
- */
+// Mock data of bookmarks for 5 users
 const userDatabase = {
   "1": [
     {
@@ -70,6 +68,23 @@ const userDatabase = {
   "5": []
 };
 
+const selectedUser = document.getElementById("users-selector")
+const bookmarkDisplayDiv = document.getElementById("bookmark-display-div")
+
+let state = {
+  userId: "1",
+  bookmarksData: {},
+}
+
+function firstLoad(userDatabase) {
+  // Only load db to localStorage if it doesn't already exist
+  if (!localStorage.getItem("userDatabase")) {
+    localStorage.setItem("userDatabase", JSON.stringify(userDatabase));
+  }
+  console.log("Database ready")
+}
+firstLoad(userDatabase)
+
 /**
  * Get a list of user ids
  *
@@ -86,8 +101,11 @@ export function getUserIds() {
  * @returns {Array<{name: string, url: string, description: string, timestamp: string}> | null}
  */
 export function getData(userId) {
-  return userDatabase[userId] || null;
+  return JSON.parse(localStorage.getItem("userDatabase") || {})[userId] || [];
+  // return userDatabase[userId] || null;
 }
+
+console.log("get", getData(1)[0].name)
 
 /**
  * Store data for a specific user.

@@ -21,7 +21,8 @@ function makeDisplayUserSelector() {
 
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
-  if (state.bookmarksData.length == 0) {
+  console.log("here", Object.keys(state.bookmarksData).length)
+  if (Object.keys(state.bookmarksData).length == 0) {
     const bookmarkShown = document.createElement("div")
     bookmarkShown.className = "bookmark-card-div" 
     bookmarkShown.style["background-color"] = "#F88379"
