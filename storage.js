@@ -68,14 +68,6 @@ const userDatabase = {
   "5": []
 };
 
-const selectedUser = document.getElementById("users-selector")
-const bookmarkDisplayDiv = document.getElementById("bookmark-display-div")
-
-let state = {
-  userId: "1",
-  bookmarksData: {},
-}
-
 function firstLoad(userDatabase) {
   // Only load db to localStorage if it doesn't already exist
   if (!localStorage.getItem("userDatabase")) {
