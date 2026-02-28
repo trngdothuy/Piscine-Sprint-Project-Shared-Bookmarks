@@ -63,7 +63,7 @@ function makeBookmarkCard({name, url, description, timestamp}) {
   bookmarkDescription.innerHTML = description
 
   const bookmarkTimestamp = document.createElement("p")
-  bookmarkTimestamp.innerHTML = new Date(timestamp).toLocaleDateString() 
+  bookmarkTimestamp.innerHTML = `Saved on ${new Date(timestamp).toLocaleDateString('en-US', {month: 'short', day: '2-digit', year: 'numeric'})}`
   bookmarkTimestamp.classList.add("bookmark-date")
 
   bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkTimestamp)
