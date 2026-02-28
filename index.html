@@ -11,31 +11,33 @@
         <h1>ShareMarks</h1>
         <div id="container">
             <!-- display new bookmarks -->
-            <div id="bookmark-form">
+            <div id="add-bookmark-div">
                 <h2>Add new bookmark</h2>
-                <form action="">
+                <form action="" id="bookmark-form">
                     <!-- user selector to know which user adds this bookmark -->
                     <div> You are: <br>
                         <div class="user-radio-selections">
-                            <input type="radio" id="user1" name="user-submit" value="user1">
+                            <input type="radio" id="user1" name="user-submit" value="1">
                             <label for="user1">User 1</label><br>
-                            <input type="radio" id="user2" name="user-submit" value="user2">
+                            <input type="radio" id="user2" name="user-submit" value="2">
                             <label for="user2">User 2</label><br>
-                            <input type="radio" id="user3" name="user-submit" value="user3">
+                            <input type="radio" id="user3" name="user-submit" value="3">
                             <label for="user3">User 3</label><br>
-                            <input type="radio" id="user4" name="user-submit" value="user4">
+                            <input type="radio" id="user4" name="user-submit" value="4">
                             <label for="user4">User 4</label><br>
-                            <input type="radio" id="user5" name="user-submit" value="user5">
+                            <input type="radio" id="user5" name="user-submit" value="5">
                             <label for="user5">User 5</label><br>
                         </div>
                     </div>
                     <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required>
+                    <input type="text" id="title" name="title" placeholder="Enter bookmark title..." required>
                     <label for="url">URL:</label>
-                    <input type="text" id="url" name="url" required>
+                    <input type="text" id="url" name="url" placeholder="Enter bookmark link..." required>
                     <label for="description">Description:</label>
-                    <textarea type="text" id="description" name="description" rows="4" cols="50" required></textarea>
-                    <div class="submit-button-parent-div"><input type="submit" value="Submit" id="submit-button"></div>
+                    <textarea type="text" id="description" name="description" rows="4" cols="50" placeholder="Enter bookmark description..." required></textarea>
+                    <div class="submit-button-parent-div">
+                        <input type="submit" value="Submit" id="submit-button">
+                    </div>
                 </form>
             </div>
             <!-- drop down selector -->

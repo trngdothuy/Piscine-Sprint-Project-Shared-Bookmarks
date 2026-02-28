@@ -2,6 +2,7 @@ import { getUserIds, getData } from "./storage.js";
 
 const selectedUser = document.getElementById("users-selector")
 const bookmarkDisplayDiv = document.getElementById("bookmark-display-div")
+const addBookmarkForm = document.getElementById("bookmark-form")
 
 let state = {
   userId: "1",
@@ -78,6 +79,14 @@ selectedUser.addEventListener("change", (e) => {
   console.log(state)
 })
 
+// add bookmark form
+addBookmarkForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const userChosen = document.querySelector('input[name="user-submit"]:checked').value
+  const title = document.getElementById("title").value
+  const url = document.getElementById("url").value
+  const description = document.getElementById("description").value
+})
 
 
 

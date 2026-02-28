@@ -104,7 +104,7 @@ a:hover {
 }
 
 /* submission form */
-form {
+#bookmark-form {
   display: flex;
   flex-direction: column;
 }
@@ -113,7 +113,7 @@ input {
   margin: 5px;
 }
 
-#bookmark-form {
+#add-bookmark-div {
   display: flex;
   flex-direction: column;
   align-items: center;
