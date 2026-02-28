@@ -140,3 +140,9 @@ input {
   justify-content: center;
   margin-top: 5px;
 }
+
+.user-radio-selections {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
