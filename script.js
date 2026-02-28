@@ -1,4 +1,4 @@
-import { getUserIds, getData } from "./storage.js";
+import { getUserIds, getData, setData } from "./storage.js";
 
 const selectedUser = document.getElementById("users-selector")
 const bookmarkDisplayDiv = document.getElementById("bookmark-display-div")
@@ -22,6 +22,8 @@ function makeDisplayUserSelector() {
 
 function displayBookmarks(userId) {
   state.bookmarksData = getData(userId)
+  console.log("state", state)
+  bookmarkDisplayDiv.innerHTML = ""
   if (Object.keys(state.bookmarksData).length == 0) {
     const bookmarkShown = document.createElement("div")
     bookmarkShown.className = "bookmark-card-div" 
@@ -82,10 +84,23 @@ selectedUser.addEventListener("change", (e) => {
 // add bookmark form
 addBookmarkForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const userChosen = document.querySelector('input[name="user-submit"]:checked').value
-  const title = document.getElementById("title").value
-  const url = document.getElementById("url").value
-  const description = document.getElementById("description").value
+  const userId = document.querySelector('input[name="user-submit"]:checked').value
+  const title = document.getElementById("title")
+  const url = document.getElementById("url")
+  const description = document.getElementById("description")
+  const time = new Date().toISOString()
+  const data = {
+    name: title.value,
+    url: url.value,
+    description: description.value,
+    timestamp: time
+  }
+  state.bookmarksData = getData(userId)
+  state.bookmarksData.push(data)
+
+  setData(userId, state.bookmarksData)
+  displayBookmarks(state.userId)
+  addBookmarkForm.reset()
 })
 
 
