@@ -69,7 +69,7 @@ const userDatabase = {
 };
 
 function firstLoad(userDatabase) {
-  localStorage.clear();
+  // localStorage.clear();
   for (const [userId, data] of Object.entries(userDatabase)) {
     // Only load db to localStorage if it doesn't already exist
     if (!localStorage.getItem(`stored-data-user-${userId}`)) {
