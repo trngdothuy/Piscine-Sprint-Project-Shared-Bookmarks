@@ -50,3 +50,5 @@ npm install http-server
     - [ ] Add like button
 ### Level 300
 - [ ] Allow user to add new bookmark
+### Stretch
+- [ ] Add delete button
