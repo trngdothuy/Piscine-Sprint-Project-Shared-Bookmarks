@@ -32,16 +32,29 @@ function displayBookmarks(userId) {
     const bookmarkShown = sorted.map(makeBookmarkCard)
     bookmarkDisplayDiv.append(...bookmarkShown)
   }
-  
 }
 
 function makeBookmarkCard({name, url, description, timestamp}) {
   const bookmarkCardDiv = document.createElement("div");
   bookmarkCardDiv.className = "bookmark-card-div";
 
+  const bookmarkFirstLine = document.createElement("div")
+  bookmarkFirstLine.className = "bookmark-first-line"
+
   const bookmarkName = document.createElement("a")
   bookmarkName.href = url
   bookmarkName.innerHTML = name
+
+  const copyButton = document.createElement("button")
+  copyButton.className = "copy-button"
+  copyButton.innerHTML = "Copy URL"
+
+  copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(bookmarkName.href);
+    copyButton.innerHTML = "Copied ✅"
+  })
+
+  bookmarkFirstLine.append(bookmarkName, copyButton)
 
   const bookmarkDescription = document.createElement("p")
   bookmarkDescription.innerHTML = description
@@ -50,7 +63,7 @@ function makeBookmarkCard({name, url, description, timestamp}) {
   bookmarkTimestamp.innerHTML = new Date(timestamp).toLocaleDateString() 
   bookmarkTimestamp.classList.add("bookmark-date")
 
-  bookmarkCardDiv.append(bookmarkName, bookmarkDescription, bookmarkTimestamp)
+  bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkTimestamp)
   return bookmarkCardDiv;
 }
 
