@@ -69,11 +69,14 @@ const userDatabase = {
 };
 
 function firstLoad(userDatabase) {
-  // Only load db to localStorage if it doesn't already exist
-  if (!localStorage.getItem("userDatabase")) {
-    localStorage.setItem("userDatabase", JSON.stringify(userDatabase));
-  }
-  console.log("Database ready")
+  localStorage.removeItem("userDatabase");
+  for (const [userId, data] of Object.entries(userDatabase)) {
+    // Only load db to localStorage if it doesn't already exist
+    if (!localStorage.getItem(`stored-data-user-${userId}`)) {
+      localStorage.setItem(`stored-data-user-${userId}`, JSON.stringify(data));
+    }
+    console.log("Database ready")
+    }
 }
 firstLoad(userDatabase)
 
@@ -93,7 +96,7 @@ export function getUserIds() {
  * @returns {Array<{name: string, url: string, description: string, timestamp: string}> | null}
  */
 export function getData(userId) {
-  return JSON.parse(localStorage.getItem("userDatabase") || {})[userId] || [];
+  return JSON.parse(localStorage.getItem(`stored-data-user-${userId}`));
 }
 
 /**
