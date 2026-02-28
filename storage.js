@@ -94,7 +94,6 @@ export function getUserIds() {
  */
 export function getData(userId) {
   return JSON.parse(localStorage.getItem("userDatabase") || {})[userId] || [];
-  // return userDatabase[userId] || null;
 }
 
 /**
