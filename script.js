@@ -48,6 +48,30 @@ function makeBookmarkCard({name, url, description, timestamp}) {
   bookmarkName.href = url
   bookmarkName.innerHTML = name
 
+  // delete button
+  const deleteButton = document.createElement("button")
+  deleteButton.className = "delete-button"
+  deleteButton.innerHTML = "❌"
+
+  deleteButton.addEventListener("click", () => {
+    // come to db, get data for this userid 
+    // delete this bookmark from the data
+    // set again
+  })
+
+  bookmarkFirstLine.append(bookmarkName, deleteButton)
+
+  const bookmarkDescription = document.createElement("p")
+  bookmarkDescription.innerHTML = description
+
+  const bookmarkLastLine = document.createElement("div")
+  bookmarkLastLine.className = "bookmark-last-line"
+
+  const bookmarkTimestamp = document.createElement("p")
+  bookmarkTimestamp.innerHTML = `Saved on ${new Date(timestamp).toLocaleDateString('en-US', {month: 'short', day: '2-digit', year: 'numeric'})}`
+  bookmarkTimestamp.classList.add("bookmark-date")
+
+  // copy button
   const copyButton = document.createElement("button")
   copyButton.className = "copy-button"
   copyButton.innerHTML = "Copy URL"
@@ -57,16 +81,9 @@ function makeBookmarkCard({name, url, description, timestamp}) {
     copyButton.innerHTML = "Copied ✅"
   })
 
-  bookmarkFirstLine.append(bookmarkName, copyButton)
+  bookmarkLastLine.append(bookmarkTimestamp, copyButton)
 
-  const bookmarkDescription = document.createElement("p")
-  bookmarkDescription.innerHTML = description
-
-  const bookmarkTimestamp = document.createElement("p")
-  bookmarkTimestamp.innerHTML = `Saved on ${new Date(timestamp).toLocaleDateString('en-US', {month: 'short', day: '2-digit', year: 'numeric'})}`
-  bookmarkTimestamp.classList.add("bookmark-date")
-
-  bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkTimestamp)
+  bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkLastLine)
   return bookmarkCardDiv;
 }
 
