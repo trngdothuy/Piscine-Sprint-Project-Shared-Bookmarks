@@ -1,5 +1,6 @@
 import { getUserIds, getData, setData } from "./storage.js";
 
+const users = getUserIds();
 const selectedUser = document.getElementById("users-selector")
 const bookmarkDisplayDiv = document.getElementById("bookmark-display-div")
 const addBookmarkForm = document.getElementById("bookmark-form")
@@ -11,7 +12,6 @@ let state = {
 
 // make selector to choose user to display bookmarks
 function makeDisplayUserSelector() {
-  const users = getUserIds();
   for (let i = 1; i <= users.length; i++) {
     const option = document.createElement("option");
     option.textContent = `User ${i}`;
@@ -93,7 +93,24 @@ selectedUser.addEventListener("change", (e) => {
   console.log(state)
 })
 
-// add bookmark form
+// user radio selection
+function makeUserRadioSelectors() {
+  for (let i = 1; i <= users.length; i++) {
+    const radioSelector = document.createElement("input")
+    radioSelector.type = "radio"
+    radioSelector.name = "user-submit"
+    radioSelector.value = i
+    radioSelector.required = true
+    
+    const label = document.createElement("label")
+    label.for = `user${i}`
+    label.innerText = `User ${i}`
+    document.querySelector(".user-radio-selections").append(radioSelector, label)
+  }
+}
+makeUserRadioSelectors()
+
+// add bookmark form sent
 addBookmarkForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const userId = document.querySelector('input[name="user-submit"]:checked').value
