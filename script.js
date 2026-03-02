@@ -47,17 +47,12 @@ function makeBookmarkCard({name, url, description, timestamp}) {
   const bookmarkName = document.createElement("a")
   bookmarkName.href = url
   bookmarkName.innerHTML = name
+  bookmarkName.classList = "bookmark-name"
 
   // delete button
   const deleteButton = document.createElement("button")
   deleteButton.className = "delete-button"
   deleteButton.innerHTML = "❌"
-
-  deleteButton.addEventListener("click", () => {
-    // come to db, get data for this userid 
-    // delete this bookmark from the data
-    // set again
-  })
 
   bookmarkFirstLine.append(bookmarkName, deleteButton)
 
@@ -120,8 +115,19 @@ addBookmarkForm.addEventListener("submit", (e) => {
   addBookmarkForm.reset()
 })
 
+// Delete buttons clicked
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('delete-button')) {
+    console.log("delete clicked")
+    const bookmarkName = e.target.closest('.bookmark-first-line').querySelector('.bookmark-name').innerText
 
-
-
+    if (confirm('Are you sure you want to delete this bookmark?')) {
+      const index = state.bookmarksData.findIndex((item) => item.name == bookmarkName)
+      state.bookmarksData.splice(index, 1)
+      setData(state.userId, state.bookmarksData)
+      displayBookmarks(state.userId)
+    }
+  }
+});
 
 
