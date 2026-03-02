@@ -100,15 +100,30 @@ function makeUserRadioSelectors() {
     radioSelector.type = "radio"
     radioSelector.name = "user-submit"
     radioSelector.value = i
+    radioSelector.id = `user${i}`
     radioSelector.required = true
     
     const label = document.createElement("label")
-    label.for = `user${i}`
+    label.htmlFor = `user${i}`
     label.innerText = `User ${i}`
     document.querySelector(".user-radio-selections").append(radioSelector, label)
   }
 }
 makeUserRadioSelectors()
+
+// validate url 
+function validateURL(url) {
+  url = url.trim()
+  if (!url.includes(".")) {
+    alert('Invalid link: must contain a dot (.)');
+    return null;
+  }
+
+  if(!url.startsWith("http://") && !url.startsWith("https://")) {
+    url = "http://" + url
+  }
+  return url
+}
 
 // add bookmark form sent
 addBookmarkForm.addEventListener("submit", (e) => {
@@ -118,18 +133,23 @@ addBookmarkForm.addEventListener("submit", (e) => {
   const url = document.getElementById("url")
   const description = document.getElementById("description")
   const time = new Date().toISOString()
-  const data = {
-    name: title.value,
-    url: url.value,
-    description: description.value,
-    timestamp: time
-  }
-  state.bookmarksData = getData(userId)
-  state.bookmarksData.push(data)
 
-  setData(userId, state.bookmarksData)
-  displayBookmarks(state.userId)
-  addBookmarkForm.reset()
+  // validate url 
+  url.value = validateURL(url.value)
+  if (url.value) {
+    const data = {
+      name: title.value,
+      url: url.value,
+      description: description.value,
+      timestamp: time
+    }
+    state.bookmarksData = getData(userId)
+    state.bookmarksData.push(data)
+
+    setData(userId, state.bookmarksData)
+    displayBookmarks(state.userId)
+    addBookmarkForm.reset()
+  }
 })
 
 // Delete buttons clicked
