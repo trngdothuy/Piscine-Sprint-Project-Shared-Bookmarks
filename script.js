@@ -32,12 +32,12 @@ function displayBookmarks(userId) {
     bookmarkDisplayDiv.append(bookmarkShown)
   } else {
     const sorted =state.bookmarksData.sort ((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-    const bookmarkShown = sorted.map(makeBookmarkCard)
+    const bookmarkShown = sorted.map((bookmark, index) => makeBookmarkCard(bookmark, index))
     bookmarkDisplayDiv.append(...bookmarkShown)
   }
 }
 
-function makeBookmarkCard({name, url, description, timestamp}) {
+function makeBookmarkCard({name, url, description, timestamp, likes = 0}) {
   const bookmarkCardDiv = document.createElement("div");
   bookmarkCardDiv.className = "bookmark-card-div";
 
@@ -81,7 +81,24 @@ function makeBookmarkCard({name, url, description, timestamp}) {
     copyButton.innerHTML = "Copied ✅"
   })
 
-  bookmarkLastLine.append(bookmarkTimestamp, copyButton)
+
+// like button
+  const likeButton = document.createElement("button")
+  likeButton.className = "like-button"
+  likeButton.innerHTML = `👍 ${likes}`
+
+  likeButton.addEventListener("click", () => {
+  const bookmarks = getData(state.userId)
+  const bookmark = bookmarks.find(b => b.url === url)  // url is the unique key
+  if (bookmark) {
+    bookmark.likes = (parseInt(bookmark.likes) || 0) + 1
+    setData(state.userId, bookmarks)
+    likeButton.innerHTML = `👍 ${bookmark.likes}`
+    likeButton.classList.add("liked")
+  }
+})
+
+  bookmarkLastLine.append(bookmarkTimestamp, copyButton, likeButton)
 
   bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkLastLine)
   return bookmarkCardDiv;
