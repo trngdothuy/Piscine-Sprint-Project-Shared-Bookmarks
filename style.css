@@ -160,6 +160,11 @@ a:hover {
 #bookmark-form textarea {
   width: 100%;
   box-sizing: border-box;
+  height:80px;
+}
+
+#bookmark-form input[type="text"]{
+  height:30px;
 }
 
 #bookmark-form label {

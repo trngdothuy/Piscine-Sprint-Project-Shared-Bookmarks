@@ -16,7 +16,7 @@
                 <form action="" id="bookmark-form">
                     <h2>Add new bookmark</h2>
                     <!-- user selector to know which user adds this bookmark -->
-                    <div> You are: <br>
+                    <div> 
                         <div class="user-radio-selections">
                             <input type="radio" name="user-submit" value="1" required>
                             <label for="user1">User 1</label>
@@ -33,9 +33,9 @@
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="title" placeholder="Enter bookmark title..." required>
                     <label for="url">URL:</label>
-                    <input type="text" id="url" name="url" placeholder="Enter bookmark link..." required>
+                    <input type="text" id="url" name="url" rows="4" placeholder="Enter bookmark link..." required>
                     <label for="description">Description:</label>
-                    <textarea type="text" id="description" name="description" rows="4" cols="50" placeholder="Enter bookmark description..." required></textarea>
+                    <textarea type="text" id="description" name="description" placeholder="Enter bookmark description..." required></textarea>
                     <div class="submit-button-parent-div">
                         <input type="submit" value="Submit" id="submit-button">
                     </div>
