@@ -25,6 +25,10 @@ h1 {
   font-size: 3rem;
 }
 
+h2 {
+  margin-bottom: 2px;
+}
+
 /* Display User Selector */
 
 #display-user-selector {
@@ -53,7 +57,7 @@ select {
   width: 40%;        /* 40% width leaves ~20% margin on each side */
   margin: 20px auto;    /* Centers the card horizontally */
   padding: 20px;
-  background-color: #caf0f8;
+  background-color: #e8f4fd; 
   border-radius: 10px;
 
 } */
@@ -96,7 +100,7 @@ a:hover {
   padding: 0px 9px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 /* bookmark 1st line to display bookmark name and copy button */
@@ -115,6 +119,7 @@ a:hover {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: rgb(65, 65, 65);
 }
 
 .copy-button:hover {
@@ -122,14 +127,59 @@ a:hover {
   border-color: #bbb;
 }
 
+/* like button */
+.like-button {
+  background-color: transparent;
+  border: none;
+  padding: 0px 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.like-button:hover {
+  background: #ffd6d6;
+  border-color: #bbb;
+}
+
+.like-button.liked {
+  background: #ffe0e0;
+  border-color: #f88;
+}
+
+
 /* submission form */
 #bookmark-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #caf0f8;
+  border-radius: 10px;       
+  padding: 20px; 
+  width:40%;    
+}
+
+#bookmark-form input[type="text"],
+#bookmark-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height:80px;
+}
+
+#bookmark-form input[type="text"]{
+  height:30px;
+}
+
+#bookmark-form label {
+  align-self: flex-start;
 }
 
 input {
   margin: 5px;
+}
+
+.user-submit {
+  margin-left: 20px;
 }
 
 #add-bookmark-div {
@@ -142,11 +192,13 @@ input {
 #submit-button {
   background: #f5f5f5;
   border: 1px solid #847f7f;
+  border-radius: 30px;
   padding: 5px 9px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100px;
+  margin-top: 20px;
 }
 
 #submit-button:hover {

@@ -37,7 +37,7 @@ function displayBookmarks(userId) {
   }
 }
 
-function makeBookmarkCard({name, url, description, timestamp}) {
+function makeBookmarkCard({name, url, description, timestamp, likes = 0}) {
   const bookmarkCardDiv = document.createElement("div");
   bookmarkCardDiv.className = "bookmark-card-div";
 
@@ -66,6 +66,10 @@ function makeBookmarkCard({name, url, description, timestamp}) {
   bookmarkTimestamp.innerHTML = `Saved on ${new Date(timestamp).toLocaleDateString('en-US', {month: 'short', day: '2-digit', year: 'numeric'})}`
   bookmarkTimestamp.classList.add("bookmark-date")
 
+  // div for copy and like buttons
+  const buttonDiv = document.createElement("div")
+  buttonDiv.className = "buttons-div"
+
   // copy button
   const copyButton = document.createElement("button")
   copyButton.className = "copy-button"
@@ -76,7 +80,26 @@ function makeBookmarkCard({name, url, description, timestamp}) {
     copyButton.innerHTML = "Copied ✅"
   })
 
-  bookmarkLastLine.append(bookmarkTimestamp, copyButton)
+
+// like button
+  const likeButton = document.createElement("button")
+  likeButton.className = "like-button"
+  likeButton.innerHTML = `👍 ${likes}`
+
+  likeButton.addEventListener("click", () => {
+  const bookmarks = getData(state.userId)
+  const bookmark = bookmarks.find(b => b.url === url)  // url is the unique key
+  if (bookmark) {
+    bookmark.likes = (parseInt(bookmark.likes) || 0) + 1
+    setData(state.userId, bookmarks)
+    likeButton.innerHTML = `👍 ${bookmark.likes}`
+    likeButton.classList.add("liked")
+  }
+})
+
+  buttonDiv.append(copyButton, likeButton)
+
+  bookmarkLastLine.append(bookmarkTimestamp, buttonDiv)
 
   bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkLastLine)
   return bookmarkCardDiv;
@@ -99,6 +122,7 @@ function makeUserRadioSelectors() {
     const radioSelector = document.createElement("input")
     radioSelector.type = "radio"
     radioSelector.name = "user-submit"
+    radioSelector.classList = "user-submit"
     radioSelector.value = i
     radioSelector.id = `user${i}`
     radioSelector.required = true
