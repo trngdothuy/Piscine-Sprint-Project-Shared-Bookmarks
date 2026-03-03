@@ -32,7 +32,7 @@ function displayBookmarks(userId) {
     bookmarkDisplayDiv.append(bookmarkShown)
   } else {
     const sorted =state.bookmarksData.sort ((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
-    const bookmarkShown = sorted.map((bookmark, index) => makeBookmarkCard(bookmark, index))
+    const bookmarkShown = sorted.map(makeBookmarkCard)
     bookmarkDisplayDiv.append(...bookmarkShown)
   }
 }
