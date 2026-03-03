@@ -45,9 +45,9 @@ npm install http-server
     - [x] For multi users
     - [x] Organize in reverse chronological order
 ### Level 200
-- [ ] Add copy and like buttons
+- [x] Add copy and like buttons
     - [x] Add copy button
-    - [ ] Add like button
+    - [x] Add like button
 ### Level 300
 - [x] Allow user to add new bookmark
 ### Stretch
