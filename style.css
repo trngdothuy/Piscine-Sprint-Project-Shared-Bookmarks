@@ -100,7 +100,7 @@ a:hover {
   padding: 0px 9px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 /* bookmark 1st line to display bookmark name and copy button */
@@ -119,6 +119,7 @@ a:hover {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: rgb(65, 65, 65);
 }
 
 .copy-button:hover {
