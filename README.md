@@ -49,6 +49,7 @@ npm install http-server
     - [x] Add copy button
     - [ ] Add like button
 ### Level 300
-- [ ] Allow user to add new bookmark
+- [x] Allow user to add new bookmark
 ### Stretch
-- [ ] Add delete button
+- [x] Add delete button
+- [x] Validate URL

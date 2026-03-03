@@ -1,5 +1,6 @@
 import { getUserIds, getData, setData } from "./storage.js";
 
+const users = getUserIds();
 const selectedUser = document.getElementById("users-selector")
 const bookmarkDisplayDiv = document.getElementById("bookmark-display-div")
 const addBookmarkForm = document.getElementById("bookmark-form")
@@ -11,7 +12,6 @@ let state = {
 
 // make selector to choose user to display bookmarks
 function makeDisplayUserSelector() {
-  const users = getUserIds();
   for (let i = 1; i <= users.length; i++) {
     const option = document.createElement("option");
     option.textContent = `User ${i}`;
@@ -47,17 +47,12 @@ function makeBookmarkCard({name, url, description, timestamp, likes = 0}) {
   const bookmarkName = document.createElement("a")
   bookmarkName.href = url
   bookmarkName.innerHTML = name
+  bookmarkName.classList = "bookmark-name"
 
   // delete button
   const deleteButton = document.createElement("button")
   deleteButton.className = "delete-button"
   deleteButton.innerHTML = "❌"
-
-  deleteButton.addEventListener("click", () => {
-    // come to db, get data for this userid 
-    // delete this bookmark from the data
-    // set again
-  })
 
   bookmarkFirstLine.append(bookmarkName, deleteButton)
 
@@ -115,7 +110,39 @@ selectedUser.addEventListener("change", (e) => {
   console.log(state)
 })
 
-// add bookmark form
+// user radio selection
+function makeUserRadioSelectors() {
+  for (let i = 1; i <= users.length; i++) {
+    const radioSelector = document.createElement("input")
+    radioSelector.type = "radio"
+    radioSelector.name = "user-submit"
+    radioSelector.value = i
+    radioSelector.id = `user${i}`
+    radioSelector.required = true
+    
+    const label = document.createElement("label")
+    label.htmlFor = `user${i}`
+    label.innerText = `User ${i}`
+    document.querySelector(".user-radio-selections").append(radioSelector, label)
+  }
+}
+makeUserRadioSelectors()
+
+// validate url 
+function validateURL(url) {
+  url = url.trim()
+  if (!url.includes(".")) {
+    alert('Invalid link: must contain a dot (.)');
+    return null;
+  }
+
+  if(!url.startsWith("http://") && !url.startsWith("https://")) {
+    url = "http://" + url
+  }
+  return url
+}
+
+// add bookmark form sent
 addBookmarkForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const userId = document.querySelector('input[name="user-submit"]:checked').value
@@ -123,22 +150,38 @@ addBookmarkForm.addEventListener("submit", (e) => {
   const url = document.getElementById("url")
   const description = document.getElementById("description")
   const time = new Date().toISOString()
-  const data = {
-    name: title.value,
-    url: url.value,
-    description: description.value,
-    timestamp: time
-  }
-  state.bookmarksData = getData(userId)
-  state.bookmarksData.push(data)
 
-  setData(userId, state.bookmarksData)
-  displayBookmarks(state.userId)
-  addBookmarkForm.reset()
+  // validate url 
+  url.value = validateURL(url.value)
+  if (url.value) {
+    const data = {
+      name: title.value,
+      url: url.value,
+      description: description.value,
+      timestamp: time
+    }
+    state.bookmarksData = getData(userId)
+    state.bookmarksData.push(data)
+
+    setData(userId, state.bookmarksData)
+    displayBookmarks(state.userId)
+    addBookmarkForm.reset()
+  }
 })
 
+// Delete buttons clicked
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('delete-button')) {
+    console.log("delete clicked")
+    const bookmarkName = e.target.closest('.bookmark-first-line').querySelector('.bookmark-name').innerText
 
-
-
+    if (confirm('Are you sure you want to delete this bookmark?')) {
+      const index = state.bookmarksData.findIndex((item) => item.name == bookmarkName)
+      state.bookmarksData.splice(index, 1)
+      setData(state.userId, state.bookmarksData)
+      displayBookmarks(state.userId)
+    }
+  }
+});
 
 
