@@ -66,6 +66,10 @@ function makeBookmarkCard({name, url, description, timestamp, likes = 0}) {
   bookmarkTimestamp.innerHTML = `Saved on ${new Date(timestamp).toLocaleDateString('en-US', {month: 'short', day: '2-digit', year: 'numeric'})}`
   bookmarkTimestamp.classList.add("bookmark-date")
 
+  // div for copy and like buttons
+  const buttonDiv = document.createElement("div")
+  buttonDiv.className = "buttons-div"
+
   // copy button
   const copyButton = document.createElement("button")
   copyButton.className = "copy-button"
@@ -93,7 +97,9 @@ function makeBookmarkCard({name, url, description, timestamp, likes = 0}) {
   }
 })
 
-  bookmarkLastLine.append(bookmarkTimestamp, copyButton, likeButton)
+  buttonDiv.append(copyButton, likeButton)
+
+  bookmarkLastLine.append(bookmarkTimestamp, buttonDiv)
 
   bookmarkCardDiv.append(bookmarkFirstLine, bookmarkDescription, bookmarkLastLine)
   return bookmarkCardDiv;
