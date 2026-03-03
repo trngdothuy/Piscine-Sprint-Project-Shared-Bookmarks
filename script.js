@@ -116,6 +116,7 @@ function makeUserRadioSelectors() {
     const radioSelector = document.createElement("input")
     radioSelector.type = "radio"
     radioSelector.name = "user-submit"
+    radioSelector.classList = "user-submit"
     radioSelector.value = i
     radioSelector.id = `user${i}`
     radioSelector.required = true
