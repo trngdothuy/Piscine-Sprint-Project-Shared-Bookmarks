@@ -276,3 +276,89 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* Responsive breakpoints */
+ 
+/* Tablet screen */
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+  }
+ 
+  #bookmark-form,
+  .bookmark-card-div {
+    width: 100%; /* full width on tablet and below */
+    padding: 18px 16px;
+  }
+ 
+  #display-user-selector {
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 6px;
+  }
+ 
+  #users-selector {
+    margin-left: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+ 
+/* Mobile */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+ 
+  h1 {
+    margin: 16px auto 12px;
+  }
+ 
+  h2 {
+    font-size: 1rem;
+  }
+ 
+  #bookmark-form {
+    padding: 16px 12px;
+    border-radius: 10px;
+    gap: 4px;
+  }
+ 
+  #bookmark-form label {
+    font-size: 0.72rem;
+  }
+ 
+  #bookmark-form input[type="text"],
+  #bookmark-form textarea {
+    font-size: 1rem; /* prevents iOS auto-zoom (must be ≥16px on some devices) */
+    padding: 10px 12px;
+  }
+ 
+  #bookmark-form textarea {
+    height: 90px;
+  }
+ 
+  .bookmark-card-div {
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+ 
+  .bookmark-last-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+  .button-div {
+    align-self: flex-end;
+  }
+ 
+  a {
+    font-size: 16px; /* comfortable tap size */
+  }
+ 
+  #submit-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+ 
